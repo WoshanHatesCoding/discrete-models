@@ -1,109 +1,95 @@
-# 📡 IoT Device Simulator with Monitoring Dashboard
+# 🧮 Discrete Models: Prime Number Generator
 
-> 🧪 Simulate IoT sensor behavior, process live data, and visualize everything on a dynamic dashboard — all in Python.
+> ⚙️ A multithreaded C++ application that generates prime numbers efficiently using parallel processing techniques.
 
 ---
 
 ## 📝 Description
 
-This project is a Python-based simulator that mimics the behavior of a real IoT device. It includes:
+This project was developed as part of a **Discrete Mathematical Models** course.  
+It explores the concept of **prime number generation** using a high-performance, parallelized algorithm.
 
-- 🎛️ Sensor simulation  
-- 🧠 Data analytics (min, max, average)  
-- 📡 Communication emulation  
-- 📊 Real-time dashboard  
-- ✅ Unit testing  
-- 🚫 Exception handling  
-- 📦 Modular, clean code structure
-
-It was developed as part of a programming assignment to practice Python skills such as **OOP**, **exception handling**, **standard libraries**, **modules**, and **visualization**.
+We use modern **C++** with **thread pools** and **modular design** to achieve fast, scalable prime number discovery over a specified range.
 
 ---
 
 ## 🎯 Objectives
 
-- Simulate a real-world sensor using a custom `Sensor` class  
-- Perform basic analytics on incoming data with a `DataProcessor`  
-- Transmit data using a `Communication` handler  
-- Bundle all components into a `Device` class  
-- Display analytics in real-time using a `Dashboard` (via `matplotlib`)  
-- Write and run test cases using `unittest`  
-- Organize all code using Python packages and modules  
+- Generate prime numbers efficiently over large ranges  
+- Use multithreading for parallel prime checks  
+- Apply concepts from discrete mathematics  
+- Design a modular, maintainable C++ application  
 
 ---
 
-## ⚙️ Project Structure
+## 📂 Project Structure
 
 ```
-iot_device_simulator/
+Discrete_Models_Project/
 │
-├── __init__.py
-├── sensor.py              # Simulates sensor readings
-├── data_processor.py      # Analyzes the sensor data
-├── communication.py       # Handles communication layer
-├── device.py              # Integrates sensor, processor, and comms
-├── dashboard.py           # Displays data visually using matplotlib
-├── main.py                # Runs the full simulation
-└── tests/
-    ├── __init__.py
-    └── test_iot_device_simulator.py  # Unit tests
+├── main.cpp              # Entry point and orchestrator
+├── thread_pool.cpp       # Custom thread pool implementation
+├── thread_pool.h         # Thread pool header file
+├── CMakeLists.txt        # Build configuration
+└── Olta-Ruslan-Baran.pdf # Project report/documentation
 ```
 
 ---
 
-## 📈 Dashboard
+## 🚀 How to Build & Run
 
-- Displays real-time line graphs for:
-  - Minimum value
-  - Maximum value
-  - Average value  
-- Built with `matplotlib`  
-- Auto-refreshes every iteration of data collection  
+### 🛠 Requirements
 
----
+- C++ compiler (GCC or Clang with C++11+ support)  
+- CMake (optional, if using provided `CMakeLists.txt`)  
 
-## 🚀 How to Run
+### ⚙️ Compile Manually
 
-### ▶️ Run the Simulation
-
-1. Make sure you have Python 3 installed  
-2. Install dependencies (only `matplotlib` is required):  
-   ```bash
-   pip install matplotlib
-   ```
-3. Run the simulation:  
-   ```bash
-   python main.py
-   ```
-
-> ⏸️ Press `Ctrl+C` to stop the simulation at any time.
-
----
-
-## 🧪 Run Tests
-
-This project uses Python’s built-in `unittest` framework.  
 ```bash
-python -m unittest discover
+g++ -std=c++11 main.cpp thread_pool.cpp -o prime_generator -pthread
+```
+
+Then run it:
+
+```bash
+./prime_generator
+```
+
+### 🧱 Or Build with CMake
+
+```bash
+mkdir build
+cd build
+cmake ..
+make
+./prime_generator
 ```
 
 ---
 
-## 💡 Extensions (Extra Credit Ideas)
+## ⚡ Features
 
-- 🔄 Simulate multiple IoT devices  
-- 🌡 Add new sensor types (e.g., temperature, humidity)  
-- 🧮 Use advanced analytics (moving averages, filters)  
-- 💾 Save data to a file or database  
-- 📊 Upgrade dashboard using `plotly` or `dash`  
+- Multithreaded prime number computation  
+- Custom thread pool implementation  
+- Efficient memory and task management  
+- Designed for scalability over large number ranges  
 
 ---
 
-## 👨‍💻 Skills Practiced
+## 📖 Report
 
-- Object-Oriented Programming  
-- Exception Handling  
-- Modular Design  
-- Data Visualization  
-- Unit Testing  
-- Python Standard Library  
+The file `Olta-Ruslan-Baran.pdf` contains a detailed explanation of:
+- Algorithm used
+- Optimization techniques
+- Time complexity and performance insights
+- Screenshots and results
+
+---
+
+## 👨‍💻 Authors
+
+- Olta  
+- Ruslan  
+- Baran  
+
+> ✨ *Efficient computation meets elegant design.*
